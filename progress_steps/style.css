@@ -67,7 +67,7 @@ body{
   align-items: center;
   border: 3px solid var(--inactive);
   border-radius: 50%;
-  transition:.4s ease;
+  transition:.4s ease .3s;
 }
 
 .circle.active{
@@ -83,6 +83,7 @@ body{
   font-size:14px;
   cursor: pointer;
   border-radius: 6px;
+  transition: .4s ease-in;
 }
 
 .btn:focus{
