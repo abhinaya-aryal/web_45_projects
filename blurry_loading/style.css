@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 *{
   box-sizing: border-box;
@@ -6,10 +6,30 @@
 
 body{
   background-color: #f6f7fb;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.background{
+  position:absolute;
+  top: -30px;
+  left: -30px;
+  height:calc(100vh + 60px);
+  width: calc(100vw + 60px);
+  background-image: url('https://images.unsplash.com/photo-1599884665627-c6c2a3131fc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: blur(0px);
+}
+
+.label{
+  font-size: 50px;
+  color: #fff;
 }
