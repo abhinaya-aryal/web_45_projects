@@ -8,10 +8,6 @@ const toggle = document.querySelector('.toggle');
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const scale = (number, inMin, inMax, outMin, outMax) => {
-  return(number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-}
-
 const setTime = () => {
   const time = new Date();
   const month = time.getMonth();
@@ -23,9 +19,9 @@ const setTime = () => {
   const seconds = time.getSeconds();
   const ampm = hours >= 12 ? "PM" : "AM";
 
-  hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0, 360)}deg)`;
-  minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
-  secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
+  hourEl.style.transform = `translate(-50%, -100%) rotate(${360 / 12 * hoursForClock}deg)`;
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(${360 / 60 * minutes}deg)`;
+  secondEl.style.transform = `translate(-50%, -100%) rotate(${360 / 60 * seconds}deg)`;
 
   timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}`: minutes} ${ampm}`;
   dateEl.innerHTML= `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
